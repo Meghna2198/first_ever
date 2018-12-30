@@ -9,7 +9,7 @@ def index(request):
     for album in all_albums:
         url =  '/music/' + str(album.id) + '/'
         html += '<a href="' + url + '">' + album.album_title + '</a><br>'
-        return HttpResponse(html)
+    return HttpResponse(html)
 
 
 def detail(request, album_id):
