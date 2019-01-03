@@ -1,0 +1,962 @@
+	<!doctype html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#" class="no-js">
+<head>
+    <meta charset="UTF-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VQYEVVNXGwECUVJVDwAO"};window.NREUM||(NREUM={}),__nr_require=function(t,n,e){function r(e){if(!n[e]){var o=n[e]={exports:{}};t[e][0].call(o.exports,function(n){var o=t[e][1][n];return r(o||n)},o,o.exports)}return n[e].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<e.length;o++)r(e[o]);return r}({1:[function(t,n,e){function r(t){try{s.console&&console.log(t)}catch(n){}}var o,i=t("ee"),a=t(16),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,n,e){r(e.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,n){return t}).join(", ")))},{}],2:[function(t,n,e){function r(t,n,e,r,s){try{p?p-=1:o(s||new UncaughtException(t,n,e),!0)}catch(f){try{i("ierr",[f,c.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,n,e){this.message=t||"Uncaught error with no additional information",this.sourceURL=n,this.line=e}function o(t,n){var e=n?null:c.now();i("err",[t,e])}var i=t("handle"),a=t(17),s=t("ee"),c=t("loader"),f=t("gos"),u=window.onerror,d=!1,l="nr@seenError",p=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(8),t(7),"addEventListener"in window&&t(5),c.xhrWrappable&&t(9),d=!0)}s.on("fn-start",function(t,n,e){d&&(p+=1)}),s.on("fn-err",function(t,n,e){d&&!e[l]&&(f(e,l,function(){return!0}),this.thrown=!0,o(e))}),s.on("fn-end",function(){d&&!this.thrown&&p>0&&(p-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})},{}],3:[function(t,n,e){t("loader").features.ins=!0},{}],4:[function(t,n,e){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),s=t(7),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,v="fn"+h,w="bstTimer",y="pushState",g=t("loader");g.features.stn=!0,t(6);var b=NREUM.o.EV;o.on(m,function(t,n){var e=t[0];e instanceof b&&(this.bstStart=g.now())}),o.on(v,function(t,n){var e=t[0];e instanceof b&&i("bst",[e,n,this.bstStart,g.now()])}),a.on(m,function(t,n,e){this.bstStart=g.now(),this.bstType=e}),a.on(v,function(t,n){i(w,[n,this.bstStart,g.now(),this.bstType])}),s.on(m,function(){this.bstStart=g.now()}),s.on(v,function(t,n){i(w,[n,this.bstStart,g.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=g.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,n,e){function r(t){for(var n=t;n&&!n.hasOwnProperty(u);)n=Object.getPrototypeOf(n);n&&o(n)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,n){return t[1]}var a=t("ee").get("events"),s=t(19)(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";n.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,n){var e=t[1],r=c(e,"nr@wrapped",function(){function t(){if("function"==typeof e.handleEvent)return e.handleEvent.apply(e,arguments)}var n={object:t,"function":e}[typeof e];return n?s(n,"fn-",null,n.name||"anonymous"):e});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,n,e){var r=t("ee").get("history"),o=t(19)(r);n.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,n,e){var r=t("ee").get("raf"),o=t(19)(r),i="equestAnimationFrame";n.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,n,e){function r(t,n,e){t[0]=a(t[0],"fn-",null,e)}function o(t,n,e){this.method=e,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,e)}var i=t("ee").get("timer"),a=t(19)(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";n.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],9:[function(t,n,e){function r(t,n){d.inPlace(n,["onreadystatechange"],"fn-",s)}function o(){var t=this,n=u.context(t);t.readyState>3&&!n.resolved&&(n.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",s)}function i(t){g.push(t),h&&(x?x.then(a):v?v(a):(E=-E,O.data=E))}function a(){for(var t=0;t<g.length;t++)r([],g[t]);g.length&&(g=[])}function s(t,n){return n}function c(t,n){for(var e in t)n[e]=t[e];return n}t(5);var f=t("ee"),u=f.get("xhr"),d=t(19)(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,v=l.SI,w="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],g=[];n.exports=u;var b=window.XMLHttpRequest=function(t){var n=new p(t);try{u.emit("new-xhr",[n],n),n.addEventListener(w,o,!1)}catch(e){try{u.emit("internal-error",[e])}catch(r){}}return n};if(c(p,b),b.prototype=p.prototype,d.inPlace(b.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,n){r(t,n),i(n)}),u.on("open-xhr-start",r),h){var x=m&&m.resolve();if(!v&&!m){var E=1,O=document.createTextNode(E);new h(a).observe(O,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===w||a()})},{}],10:[function(t,n,e){function r(t){var n=this.params,e=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!n.aborted){if(e.duration=a.now()-this.startTime,4===t.readyState){n.status=t.status;var i=o(t,this.lastSize);if(i&&(e.rxSize=i),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;e.cbTime=this.cbTime,f.emit("xhr-done",[t],t),s("xhr",[n,e,this.startTime])}}}function o(t,n){var e=t.responseType;if("json"===e&&null!==n)return n;var r="arraybuffer"===e||"blob"===e||"json"===e?t.response:t.responseText;return h(r)}function i(t,n){var e=c(n),r=t.params;r.host=e.hostname+":"+e.port,r.pathname=e.pathname,t.sameOrigin=e.sameOrigin}var a=t("loader");if(a.xhrWrappable){var s=t("handle"),c=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var n=this;n.totalCbs=0,n.called=0,n.cbTime=0,n.end=r,n.ended=!1,n.xhrGuids={},n.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){n.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,n){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&n.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,n){var e=this.metrics,r=t[0],o=this;if(e&&r){var i=h(r);i&&(e.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof n.onload))&&o.end(n)}catch(e){try{f.emit("internal-error",[e])}catch(r){}}};for(var s=0;s<d;s++)n.addEventListener(u[s],this.listener,!1)}),f.on("xhr-cb-time",function(t,n,e){this.cbTime+=t,n?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof e.onload||this.end(e)}),f.on("xhr-load-added",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&!this.xhrGuids[e]&&(this.xhrGuids[e]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&this.xhrGuids[e]&&(delete this.xhrGuids[e],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],n)}),f.on("removeEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],n)}),f.on("fn-start",function(t,n,e){n instanceof m&&("onload"===e&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),f.on("fn-end",function(t,n){this.xhrCbStart&&f.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,n],n)})}},{}],11:[function(t,n,e){n.exports=function(t){var n=document.createElement("a"),e=window.location,r={};n.href=t,r.port=n.port;var o=n.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=n.hostname||e.hostname,r.pathname=n.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!n.protocol||":"===n.protocol||n.protocol===e.protocol,a=n.hostname===document.domain&&n.port===e.port;return r.sameOrigin=i&&(!n.hostname||a),r}},{}],12:[function(t,n,e){function r(){}function o(t,n,e){return function(){return i(t,[f.now()].concat(s(arguments)),n?null:this,e),n?void 0:this}}var i=t("handle"),a=t(16),s=t(17),c=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,n){u[n]=o(l+n,!0,"api")}),u.addPageAction=o(l+"addPageAction",!0),u.setCurrentRouteName=o(l+"routeName",!0),n.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,n){var e={},r=this,o="function"==typeof n;return i(p+"tracer",[f.now(),t,e],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],e),o)try{return n.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],e),t}finally{c.emit("fn-end",[f.now()],e)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,n){h[n]=o(p+n)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now()])}},{}],13:[function(t,n,e){n.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(n){return}}}},{}],14:[function(t,n,e){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),n.exports=r},{}],15:[function(t,n,e){function r(t,n){if(!o)return!1;if(t!==o)return!1;if(!n)return!0;if(!i)return!1;for(var e=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==e[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var s=navigator.userAgent,c=s.match(a);c&&s.indexOf("Chrome")===-1&&s.indexOf("Chromium")===-1&&(o="Safari",i=c[1])}n.exports={agent:o,version:i,match:r}},{}],16:[function(t,n,e){function r(t,n){var e=[],r="",i=0;for(r in t)o.call(t,r)&&(e[i]=n(r,t[r]),i+=1);return e}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],17:[function(t,n,e){function r(t,n,e){n||(n=0),"undefined"==typeof e&&(e=t?t.length:0);for(var r=-1,o=e-n||0,i=Array(o<0?0:o);++r<o;)i[r]=t[n+r];return i}n.exports=r},{}],18:[function(t,n,e){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],19:[function(t,n,e){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(17),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;n.exports=function(t,n){function e(t,n,e,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof e?e(r,a):e||{}}catch(f){l([f,"",[r,a,o],s])}u(n+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(d){throw u(n+"err",[r,a,d],s),d}finally{u(n+"end",[r,a,c],s)}}return r(t)?t:(n||(n=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,n,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<n.length;c++)s=n[c],a=t[s],r(a)||(t[s]=e(a,f?s+o:o,i,s))}function u(e,r,o){if(!c||n){var i=c;c=!0;try{t.emit(e,r,o,n)}catch(a){l([a,e,r,o])}c=i}}function d(t,n){if(Object.defineProperty&&Object.keys)try{var e=Object.keys(t);return e.forEach(function(e){Object.defineProperty(n,e,{get:function(){return t[e]},set:function(n){return t[e]=n,n}})}),n}catch(r){l([r])}for(var o in t)s.call(t,o)&&(n[o]=t[o]);return n}function l(n){try{t.emit("internal-error",n)}catch(e){}}return t||(t=o),e.inPlace=f,e.flag=a,e}},{}],ee:[function(t,n,e){function r(){}function o(t){function n(t){return t&&t instanceof r?t:t?c(t,s,i):i()}function e(e,r,o,i){if(!l.aborted||i){t&&t(e,r,o);for(var a=n(o),s=m(e),c=s.length,f=0;f<c;f++)s[f].apply(a,r);var d=u[g[e]];return d&&d.push([b,e,r,a]),a}}function p(t,n){y[t]=m(t).concat(n)}function h(t,n){var e=y[t];if(e)for(var r=0;r<e.length;r++)e[r]===n&&e.splice(r,1)}function m(t){return y[t]||[]}function v(t){return d[t]=d[t]||o(e)}function w(t,n){f(t,function(t,e){n=n||"feature",g[e]=n,n in u||(u[n]=[])})}var y={},g={},b={on:p,addEventListener:p,removeEventListener:h,emit:e,get:v,listeners:m,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var s="nr@context",c=t("gos"),f=t(16),u={},d={},l=n.exports=o();l.backlog=u},{}],gos:[function(t,n,e){function r(t,n,e){if(o.call(t,n))return t[n];var r=e();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(t,n,e){function r(t,n,e,r){o.buffer([t],r),o.emit(t,n,e)}var o=t("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(t,n,e){function r(t){var n=typeof t;return!t||"object"!==n&&"function"!==n?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");n.exports=r},{}],loader:[function(t,n,e){function r(){if(!E++){var t=x.info=NREUM.info,n=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&n))return u.abort();f(g,function(n,e){t[n]||(t[n]=e)}),c("mark",["onload",a()+x.offset],null,"api");var e=p.createElement("script");e.src="https://"+t.agent,n.parentNode.insertBefore(e,n)}}function o(){"complete"===p.readyState&&i()}function i(){c("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(s=Math.max((new Date).getTime(),s))-x.offset}var s=(new Date).getTime(),c=t("handle"),f=t(16),u=t("ee"),d=t(15),l=window,p=l.document,h="addEventListener",m="attachEvent",v=l.XMLHttpRequest,w=v&&v.prototype;NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:v,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var y=""+location,g={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1099.min.js"},b=v&&w&&w[h]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:s,now:a,origin:y,features:{},xhrWrappable:b,userAgent:d};t(12),p[h]?(p[h]("DOMContentLoaded",i,!1),l[h]("load",r,!1)):(p[m]("onreadystatechange",o),l[m]("onload",r)),c("mark",["firstbyte",s],null,"api");var E=0,O=t(18)},{}]},{},["loader",2,10,4,3]);</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://assets.ti-media.net/" crossorigin>
+<link rel="preconnect" href="https://adservice.google.co.uk" crossorigin>
+<link rel="preconnect" href="https://googleads.g.doubleclick.net" crossorigin>
+<link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+<link rel="preconnect" href="https://adservice.google.com" crossorigin>
+<link rel="preconnect" href="https://tpc.googlesyndication.com" crossorigin>
+<link rel="preconnect" href="https://www.googleadservices.com" crossorigin>
+<link rel="preconnect" href="https://googletagservices.com" crossorigin>
+<link rel="preconnect" href="https://securepubads.g.doubleclick.net" crossorigin>
+<link rel="preconnect" href="https://display.apester.com" crossorigin>
+<link rel="preconnect" href="https://player.apester.com" crossorigin>
+<link rel="preconnect" href="https://renderer.apester.com" crossorigin>
+<link rel="preconnect" href="https://static.apester.com" crossorigin>
+<link rel="preconnect" href="https://content.jwplatform.com" crossorigin>
+<link rel="preconnect" href="https://jwpltx.com" crossorigin>
+<link rel="preconnect" href="https://ssl.p.jwpcdn.com" crossorigin>
+<link rel="preconnect" href="https://cdn.taboola.com" crossorigin>
+<link rel="preconnect" href="https://trc.taboola.com" crossorigin>
+
+
+    		<!-- TI performance tracking -->
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+				function trackFcp(fcp) {
+					var t = setTimeout(function () {
+						if (typeof ipc === 'undefined' || typeof ipc.utils.trackEvent === 'undefined') {
+							trackFcp(fcp);
+						} else {
+							window.dataLayer.push({ event: 'event.customMetric', ga_customMetricIndex: 1, ga_customMetricValue: fcp, ga_customMetricName: 'FCP' });
+							clearTimeout(t);
+						}
+					}, 1000);
+				}
+				if (window.performance) {
+					var fcp = window.performance.getEntriesByType("paint")[1].startTime;
+					trackFcp(fcp);
+				}
+			});
+			(function(){var h="undefined"!=typeof window&&window===this?this:"undefined"!=typeof global&&null!=global?global:this,k="function"==typeof Object.defineProperties?Object.defineProperty:function(a,b,c){a!=Array.prototype&&a!=Object.prototype&&(a[b]=c.value)};function l(){l=function(){};h.Symbol||(h.Symbol=m)}var n=0;function m(a){return"jscomp_symbol_"+(a||"")+n++}
+			function p(){l();var a=h.Symbol.iterator;a||(a=h.Symbol.iterator=h.Symbol("iterator"));"function"!=typeof Array.prototype[a]&&k(Array.prototype,a,{configurable:!0,writable:!0,value:function(){return q(this)}});p=function(){}}function q(a){var b=0;return r(function(){return b<a.length?{done:!1,value:a[b++]}:{done:!0}})}function r(a){p();a={next:a};a[h.Symbol.iterator]=function(){return this};return a}function t(a){p();var b=a[Symbol.iterator];return b?b.call(a):q(a)}
+			function u(a){if(!(a instanceof Array)){a=t(a);for(var b,c=[];!(b=a.next()).done;)c.push(b.value);a=c}return a}var v=0;function w(a,b){var c=XMLHttpRequest.prototype.send,d=v++;XMLHttpRequest.prototype.send=function(f){for(var e=[],g=0;g<arguments.length;++g)e[g-0]=arguments[g];var E=this;a(d);this.addEventListener("readystatechange",function(){4===E.readyState&&b(d)});return c.apply(this,e)}}
+			function x(a,b){var c=fetch;fetch=function(d){for(var f=[],e=0;e<arguments.length;++e)f[e-0]=arguments[e];return new Promise(function(d,e){var g=v++;a(g);c.apply(null,[].concat(u(f))).then(function(a){b(g);d(a)},function(a){b(a);e(a)})})}}var y="img script iframe link audio video source".split(" ");function z(a,b){a=t(a);for(var c=a.next();!c.done;c=a.next())if(c=c.value,b.includes(c.nodeName.toLowerCase())||z(c.children,b))return!0;return!1}
+			function A(a){var b=new MutationObserver(function(c){c=t(c);for(var b=c.next();!b.done;b=c.next())b=b.value,"childList"==b.type&&z(b.addedNodes,y)?a(b):"attributes"==b.type&&y.includes(b.target.tagName.toLowerCase())&&a(b)});b.observe(document,{attributes:!0,childList:!0,subtree:!0,attributeFilter:["href","src"]});return b}
+			function B(a,b){if(2<a.length)return performance.now();var c=[];b=t(b);for(var d=b.next();!d.done;d=b.next())d=d.value,c.push({timestamp:d.start,type:"requestStart"}),c.push({timestamp:d.end,type:"requestEnd"});b=t(a);for(d=b.next();!d.done;d=b.next())c.push({timestamp:d.value,type:"requestStart"});c.sort(function(a,b){return a.timestamp-b.timestamp});a=a.length;for(b=c.length-1;0<=b;b--)switch(d=c[b],d.type){case "requestStart":a--;break;case "requestEnd":a++;if(2<a)return d.timestamp;break;default:throw Error("Internal Error: This should never happen");
+			}return 0}function C(a){a=a?a:{};this.w=!!a.useMutationObserver;this.u=a.minValue||null;a=window.__tti&&window.__tti.e;var b=window.__tti&&window.__tti.o;this.a=a?a.map(function(a){return{start:a.startTime,end:a.startTime+a.duration}}):[];b&&b.disconnect();this.b=[];this.f=new Map;this.j=null;this.v=-Infinity;this.i=!1;this.h=this.c=this.s=null;w(this.m.bind(this),this.l.bind(this));x(this.m.bind(this),this.l.bind(this));D(this);this.w&&(this.h=A(this.B.bind(this)))}
+			C.prototype.getFirstConsistentlyInteractive=function(){var a=this;return new Promise(function(b){a.s=b;"complete"==document.readyState?F(a):window.addEventListener("load",function(){F(a)})})};function F(a){a.i=!0;var b=0<a.a.length?a.a[a.a.length-1].end:0,c=B(a.g,a.b);G(a,Math.max(c+5E3,b))}
+			function G(a,b){!a.i||a.v>b||(clearTimeout(a.j),a.j=setTimeout(function(){var b=performance.timing.navigationStart,d=B(a.g,a.b),b=(window.a&&window.a.A?1E3*window.a.A().C-b:0)||performance.timing.domContentLoadedEventEnd-b;if(a.u)var f=a.u;else performance.timing.domContentLoadedEventEnd?(f=performance.timing,f=f.domContentLoadedEventEnd-f.navigationStart):f=null;var e=performance.now();null===f&&G(a,Math.max(d+5E3,e+1E3));var g=a.a;5E3>e-d?d=null:(d=g.length?g[g.length-1].end:b,d=5E3>e-d?null:Math.max(d,
+			f));d&&(a.s(d),clearTimeout(a.j),a.i=!1,a.c&&a.c.disconnect(),a.h&&a.h.disconnect());G(a,performance.now()+1E3)},b-performance.now()),a.v=b)}
+			function D(a){a.c=new PerformanceObserver(function(b){b=t(b.getEntries());for(var c=b.next();!c.done;c=b.next())if(c=c.value,"resource"===c.entryType&&(a.b.push({start:c.fetchStart,end:c.responseEnd}),G(a,B(a.g,a.b)+5E3)),"longtask"===c.entryType){var d=c.startTime+c.duration;a.a.push({start:c.startTime,end:d});G(a,d+5E3)}});a.c.observe({entryTypes:["longtask","resource"]})}C.prototype.m=function(a){this.f.set(a,performance.now())};C.prototype.l=function(a){this.f.delete(a)};
+			C.prototype.B=function(){G(this,performance.now()+5E3)};h.Object.defineProperties(C.prototype,{g:{configurable:!0,enumerable:!0,get:function(){return[].concat(u(this.f.values()))}}});var H={getFirstConsistentlyInteractive:function(a){a=a?a:{};return"PerformanceLongTaskTiming"in window?(new C(a)).getFirstConsistentlyInteractive():Promise.resolve(null)}};
+			"undefined"!=typeof module&&module.exports?module.exports=H:"function"===typeof define&&define.amd?define("ttiPolyfill",[],function(){return H}):window.ttiPolyfill=H;})();
+			ttiPolyfill.getFirstConsistentlyInteractive().then(function(tti) {
+				if (typeof ipc !== 'undefined' && typeof ipc.utils.trackEvent !== 'undefined') {
+					window.dataLayer.push({ event: 'event.customMetric', ga_customMetricIndex: 2, ga_customMetricValue: tti, ga_customMetricName: 'TTI' });
+				}
+			});
+		</script>
+		<!-- End TI performance tracking --><title>Adele&#039;s &#039;21&#039; officially the best-selling UK album of millennium - NME</title>
+<style type="text/css">
+@font-face {
+	font-family: "keystone";
+	font-weight: normal;
+	font-style: normal;
+	font-display: fallback;
+	src:	url("//www.nme.com/wp-content/themes/simba-theme/assets/fonts/standard.woff2?v=1545229993") format("woff2"),
+	url("//www.nme.com/wp-content/themes/simba-theme/assets/fonts/standard.woff?v=1545229993") format("woff");
+}
+.icon-spinner {
+	background-image: url("//www.nme.com/wp-content/themes/simba-theme/assets/images/spinner.gif");
+}
+.ie7 input {
+	behavior:url("//www.nme.com/wp-content/themes/simba-theme/assets/js/ext/boxsizing.htc");
+}
+</style>		<script type="text/javascript">
+		window.ipcTags = {"site":"nme","section":"news","type":"article","cplatform":"keystone","dfp_config":{"required_tags":["type","section","site","subsection","tagging","pub","author","contentId","subtype","amp","single","page_slug"],"available_criteria":{"mobile":{"criteria":{"window_greater_than":{"width_minimum":0},"window_less_than_equal_to":{"width_maximum":727}},"display_mode":"mobile"},"desktop":{"criteria":{"window_greater_than":{"width_minimum":727}},"display_mode":"desktop"}},"slots":{"header-1":{"name":{"mobile":"mobilebanner01","desktop":"billboard01"},"inview":false,"sizes":[[320,50]],"sizeMapping":[[[0,0],[[320,50],[300,50],[300,1],"fluid"]],[[728,0],[[728,1],[728,90],"fluid"]],[[992,0],[[728,1],[970,250],[970,90],[728,90],"fluid"]]]},"inline-1":{"name":"inline01","inview":true,"sizes":[[320,50]],"sizeMapping":[[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]],[[728,0],[[728,90],[728,1],"fluid"]],[[992,0],[[970,250],[970,90],[728,90],[728,1],"fluid"]]]},"inline-2":{"name":"inline02","inview":true,"sizes":[[320,50]],"sizeMapping":[[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]],[[728,0],[[728,90],[728,1],"fluid"]],[[992,0],[[970,250],[970,90],[728,90],[728,1],"fluid"]]]},"side-1":{"name":"mpu01","criteria":["desktop"],"inview":false,"sizes":[[300,250]],"sizeMapping":[[[0,0],[]],[[728,0],[[300,250],[300,600],[300,1050],[300,1]]]]},"inline-mobile-1":{"name":"mpu01","criteria":["mobile"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]],[[728,0],[]]]},"inline-side-1":{"name":"mpu01","inview":false,"sizes":[[300,250]],"sizeMapping":[[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]],[[728,0],[[300,250],[300,600],[300,1050],[300,1]]]]},"inline-side-2":{"name":"mpu02","inview":true,"sizes":[[300,250]],"sizeMapping":[[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]],[[728,0],[[300,250],[300,1]]]]},"inline-side-3":{"name":"mpu03","inview":true,"sizes":[[300,250]],"sizeMapping":[[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]],[[728,0],[[300,250],[300,600],[300,1050],[300,1]]]]},"inline-side-4":{"name":"mpu04","inview":true,"sizes":[[300,250]],"sizeMapping":[[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]],[[728,0],[[300,250],[300,600],[300,1050],[300,1]]]]},"inline-side-5":{"name":"mpu05","inview":true,"sizes":[[300,250]],"sizeMapping":[[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]],[[728,0],[[300,250],[300,600],[300,1050],[300,1]]]]},"post-inline-side-2":{"name":{"desktop":"mpu02","mobile":"mpu01"},"inview":true,"sizes":[[300,250]],"sizeMapping":[[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]],[[728,0],[[300,250],[300,600],[300,1050],[300,1]]]]},"post-inline-side-3":{"name":{"desktop":"mpu03","mobile":"mpu02"},"inview":true,"sizes":[[300,250]],"sizeMapping":[[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]],[[728,0],[[300,250],[300,600],[300,1050],[300,1]]]]},"post-inline-side-4":{"name":{"desktop":"mpu04","mobile":"mpu03"},"inview":true,"sizes":[[300,250]],"sizeMapping":[[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]],[[728,0],[[300,250],[300,600],[300,1050],[300,1]]]]},"post-inline-side-5":{"name":{"desktop":"mpu05","mobile":"mpu04"},"inview":true,"sizes":[[300,250]],"sizeMapping":[[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]],[[728,0],[[300,250],[300,600],[300,1050],[300,1]]]]},"gallery-inline-side-1":{"name":{"desktop":"mpu02","mobile":"mpu01"},"inview":true,"sizes":[[300,250]],"sizeMapping":[[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]],[[728,0],[[300,250],[300,600],[300,1050],[300,1]]]]},"gallery-inline-side-2":{"name":{"desktop":"mpu03","mobile":"mpu02"},"inview":true,"sizes":[[300,250]],"sizeMapping":[[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]],[[728,0],[[300,250],[300,600],[300,1050],[300,1]]]]},"gallery-inline-side-3":{"name":{"desktop":"mpu04","mobile":"mpu03"},"inview":true,"sizes":[[300,250]],"sizeMapping":[[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]],[[728,0],[[300,250],[300,600],[300,1050],[300,1]]]]},"gallery-inline-side-4":{"name":{"desktop":"mpu05","mobile":"mpu04"},"inview":true,"sizes":[[300,250]],"sizeMapping":[[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]],[[728,0],[[300,250],[300,600],[300,1050],[300,1]]]]},"gallery-inline-side-5":{"name":{"desktop":"mpu06","mobile":"mpu05"},"inview":true,"sizes":[[300,250]],"sizeMapping":[[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]],[[728,0],[[300,250],[300,600],[300,1050],[300,1]]]]},"gallery-inline-side-6":{"name":{"desktop":"mpu07","mobile":"mpu06"},"inview":true,"sizes":[[300,250]],"sizeMapping":[[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]],[[728,0],[[300,250],[300,600],[300,1050],[300,1]]]]},"gallery-inline-side-7":{"name":{"desktop":"mpu08","mobile":"mpu07"},"inview":true,"sizes":[[300,250]],"sizeMapping":[[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]],[[728,0],[[300,250],[300,600],[300,1050],[300,1]]]]},"gallery-inline-side-8":{"name":{"desktop":"mpu09","mobile":"mpu08"},"inview":true,"sizes":[[300,250]],"sizeMapping":[[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]],[[728,0],[[300,250],[300,600],[300,1050],[300,1]]]]},"gallery-inline-side-9":{"name":{"desktop":"mpu10","mobile":"mpu09"},"inview":true,"sizes":[[300,250]],"sizeMapping":[[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]],[[728,0],[[300,250],[300,600],[300,1050],[300,1]]]]},"gallery-inline-side-10":{"name":{"desktop":"mpu11","mobile":"mpu10"},"inview":true,"sizes":[[300,250]],"sizeMapping":[[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]],[[728,0],[[300,250],[300,600],[300,1050],[300,1]]]]},"gallery-inline-desktop-1":{"name":"gallery_banner01","criteria":["desktop"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[0,0],[]],[[728,0],[[728,1],[728,90],"fluid"]],[[992,0],[[970,250],[970,90],[728,90],[300,250],[300,1],[728,1],"fluid"]]]},"gallery-inline-desktop-2":{"name":"gallery_banner02","criteria":["desktop"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[0,0],[]],[[728,0],[[728,1],[728,90],"fluid"]],[[992,0],[[970,250],[970,90],[728,90],[300,250],[300,1],[728,1],"fluid"]]]},"gallery-inline-desktop-3":{"name":"gallery_banner03","criteria":["desktop"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[0,0],[]],[[728,0],[[728,1],[728,90],"fluid"]],[[992,0],[[970,250],[970,90],[728,90],[300,250],[300,1],[728,1],"fluid"]]]},"gallery-inline-desktop-4":{"name":"gallery_banner04","criteria":["desktop"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[0,0],[]],[[728,0],[[728,1],[728,90],"fluid"]],[[992,0],[[970,250],[970,90],[728,90],[300,250],[300,1],[728,1],"fluid"]]]},"gallery-inline-desktop-5":{"name":"gallery_banner05","criteria":["desktop"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[0,0],[]],[[728,0],[[728,1],[728,90],"fluid"]],[[992,0],[[970,250],[970,90],[728,90],[300,250],[300,1],[728,1],"fluid"]]]},"gallery-inline-desktop-6":{"name":"gallery_banner06","criteria":["desktop"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[0,0],[]],[[728,0],[[728,1],[728,90],"fluid"]],[[992,0],[[970,250],[970,90],[728,90],[300,250],[300,1],[728,1],"fluid"]]]},"gallery-inline-desktop-7":{"name":"gallery_banner07","criteria":["desktop"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[0,0],[]],[[728,0],[[728,1],[728,90],"fluid"]],[[992,0],[[970,250],[970,90],[728,90],[300,250],[300,1],[728,1],"fluid"]]]},"gallery-inline-desktop-8":{"name":"gallery_banner08","criteria":["desktop"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[0,0],[]],[[728,0],[[728,1],[728,90],"fluid"]],[[992,0],[[970,250],[970,90],[728,90],[300,250],[300,1],[728,1],"fluid"]]]},"gallery-inline-desktop-9":{"name":"gallery_banner09","criteria":["desktop"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[0,0],[]],[[728,0],[[728,1],[728,90],"fluid"]],[[992,0],[[970,250],[970,90],[728,90],[300,250],[300,1],[728,1],"fluid"]]]},"gallery-inline-desktop-10":{"name":"gallery_banner10","criteria":["desktop"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[0,0],[]],[[728,0],[[728,1],[728,90],"fluid"]],[[992,0],[[970,250],[970,90],[728,90],[300,250],[300,1],[728,1],"fluid"]]]},"dfpad-overlay":{"name":"dfpad-overlay","criteria":["desktop","tablet","mobile"],"sizes":[1,1]},"gumgum":{"name":"gumgum","inview":false,"criteria":["desktop","tablet","mobile"],"sizes":[8,2]},"teads":{"name":"teads","inview":false,"criteria":["mobile"],"sizes":[11,2]},"sovrn":{"name":"sovrn","inview":false,"criteria":["desktop","tablet","mobile"],"sizes":[12,2]},"native-archive-homepage":{"name":"native-archive-homepage","targeting":{"strnativekey":"t3CfDKwt6hVemGM2HV83ynr8"},"criteria":["desktop","mobile"],"inview":false,"sizes":[[6,1],[6,1]]},"native-archive-landing":{"name":"native-archive-landing","targeting":{"strnativekey":"nKgMGBo4BcPRyjBtv9KoykR7"},"criteria":["desktop","mobile"],"inview":false,"sizes":[[6,1],[6,1]]},"native-content-desktop":{"name":"native-content-desktop","targeting":{"strnativekey":"M4UerdF6i5G6Tqv13TCuepHJ"},"criteria":["desktop"],"inview":false,"sizes":[[6,1]]},"native-content-mobile":{"name":"native-content-mobile","targeting":{"strnativekey":"xgFcuJDYuif5TQQCbLtCjAch"},"criteria":["mobile"],"inview":false,"sizes":[[6,1]]}},"indexExchange":"ht\/p\/184316-131235576190327.js"},"env":"prod","geo":"","skimlinks_enabled":true,"pxslot_base":"article","amp":false,"meta_title":"Adele's '21' officially the best-selling UK album of millennium","meta_description":"The singer beats Amy Winehouse, James Blunt, Leona Lewis and Dido to top spot","page_slug":"\/news\/music\/adele-180-1212217","contentId":1212217,"subtype":"image","tagging":["category:music","person_category:adele","publication_name:nme","author:ashley_williams"],"author":"ashley_williams","authorName":"Ashley Williams","datePublished":"20150319","hourPublished":"14","minPublished":"31","dateUpdated":"20150321","hourUpdated":"12","minUpdated":"36","subsection":"music","single":true,"pub":"nme","template":"single-post"};
+		</script>
+
+<!-- This site is optimized with the Yoast SEO plugin v3.9 - https://yoast.com/wordpress/plugins/seo/ -->
+<link rel="canonical" href="https://www.nme.com/news/music/adele-180-1212217" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Adele&#039;s &#039;21&#039; officially the best-selling UK album of millennium - NME" />
+<meta property="og:description" content="The singer beats Amy Winehouse, James Blunt, Leona Lewis and Dido to top spot" />
+<meta property="og:url" content="https://www.nme.com/news/music/adele-180-1212217" />
+<meta property="og:site_name" content="NME" />
+<meta property="article:publisher" content="https://www.facebook.com/nmemagazine" />
+<meta property="article:section" content="Music News" />
+<meta property="article:published_time" content="2015-03-19T14:31:09+00:00" />
+<meta property="article:modified_time" content="2015-03-21T12:36:05+00:00" />
+<meta property="og:updated_time" content="2015-03-21T12:36:05+00:00" />
+<meta property="fb:app_id" content="208195102528120" />
+<meta property="og:image" content="https://ksassets.timeincuk.net/wp/uploads/sites/55/2015/12/2.Adele-21021012.jpg" />
+<meta property="og:image:width" content="600" />
+<meta property="og:image:height" content="600" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="The singer beats Amy Winehouse, James Blunt, Leona Lewis and Dido to top spot" />
+<meta name="twitter:title" content="Adele&#039;s &#039;21&#039; officially the best-selling UK album of millennium - NME" />
+<meta name="twitter:site" content="@NME" />
+<meta name="twitter:image" content="https://ksassets.timeincuk.net/wp/uploads/sites/55/2015/12/2.Adele-21021012.jpg" />
+<meta name="twitter:creator" content="@NME" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="NME &raquo; Feed" href="https://www.nme.com/feed" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.nme.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=NC45Ljc"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56692,8205,9792,65039],[55357,56692,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='keystone-premium-css'  href='https://www.nme.com/wp-content/themes/simba-theme/assets/css/sites/55.min.css?ver=1545229993' type='text/css' media='all' />
+<script type='text/javascript' src='https://www.nme.com/wp-content/themes/simba-theme/assets/js/jquery-3.3.1.min.js?ver=3.3.1'></script>
+<link rel='https://api.w.org/' href='https://www.nme.com/wp-json/' />
+<link rel='shortlink' href='https://www.nme.com/?p=1212217' />
+<link rel="alternate" type="application/json+oembed" href="https://www.nme.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.nme.com%2Fnews%2Fmusic%2Fadele-180-1212217" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.nme.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.nme.com%2Fnews%2Fmusic%2Fadele-180-1212217&#038;format=xml" />
+<link rel="amphtml" href="http://amp.timeinc.net/nme/news/music/adele-180-1212217?source=dam" /><script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"NewsArticle","headline":"Adele&#8217;s &#8217;21&#8217; officially the best-selling UK album of millennium","url":"https:\/\/www.nme.com\/news\/music\/adele-180-1212217","thumbnailUrl":"https:\/\/ksassets.timeincuk.net\/wp\/uploads\/sites\/55\/2015\/12\/2.Adele-21021012.jpg","image":"https:\/\/ksassets.timeincuk.net\/wp\/uploads\/sites\/55\/2015\/12\/2.Adele-21021012.jpg","dateCreated":"2015-03-19T14:31:09+00:00","datePublished":"2015-03-19T14:31:09+00:00","dateModified":"2015-03-21T12:36:05+00:00","articleSection":"Music News","creator":{"@type":"Person","name":"Ashley Williams"},"author":{"@type":"Person","name":"Ashley Williams"},"publisher":{"@type":"Organization","name":"NME","logo":{"@type":"http:\/\/schema.org\/ImageObject","url":"https:\/\/ksassets.timeincuk.net\/wp\/uploads\/sites\/55\/2018\/06\/REV.NME_.WEB_.80px-1.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/www.nme.com\/news\/music\/adele-180-1212217"},"keywords":["Music News","Adele"]}</script>
+<meta property="fb:pages" content="9577714166" />		<script type="text/javascript" charset="utf-8">
+		(function(a,b,c,d){
+		    var protocol = "https://";
+		    a="assets.ti-media.net/js/e1512726446_2a23693/min/gtm/utils-min.js";
+		    b=document;c='script';d=b.createElement(c);d.src=protocol+a;d.async=true;d.type='text/java'+c;
+		    a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
+		 })();
+		</script>
+	      <!-- Google Tag Manager -->
+      <script>(function ( w, d, s, l, i ) {
+          w[ l ] = w[ l ] || [];
+          w[ l ].push({
+            'gtm.start' :
+              new Date().getTime(), event : 'gtm.js'
+          });
+          var f = d.getElementsByTagName(s)[ 0 ],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+          j.async = true;
+          j.src =
+            'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+          f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer','GTM-PFB5MWX');</script>
+      <!-- End Google Tag Manager -->
+      <link rel="icon" href="https://ksassets.timeincuk.net/wp/uploads/sites/55/2016/10/cropped-nme-site-icon-150x150.jpg" sizes="32x32" />
+<link rel="icon" href="https://ksassets.timeincuk.net/wp/uploads/sites/55/2016/10/cropped-nme-site-icon-300x300.jpg" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="https://ksassets.timeincuk.net/wp/uploads/sites/55/2016/10/cropped-nme-site-icon-300x300.jpg" />
+<meta name="msapplication-TileImage" content="https://ksassets.timeincuk.net/wp/uploads/sites/55/2016/10/cropped-nme-site-icon-300x300.jpg" />
+		<style type="text/css" id="wp-custom-css">
+			@media (min-width: 45.5em) {
+	.listing--hero h3 {
+    max-width: 30em;		
+	}
+}
+.header-advert .ipc-advert>div {
+	margin: 0 auto;
+}
+
+@media only screen and (max-width: 727px) {
+.has-adverts {
+    padding-top: 0;
+    margin-top: 54px;
+}
+}
+
+.tax-person_category .description-primary img {
+	max-width: 100%;
+	height: auto;
+}
+		</style>
+	    			</head>
+
+<body class="post-template-default single single-post postid-1212217 single-format-standard has-adverts y2019 m01 d03 h01 adele-180 standard slim-header">
+
+<div class="header-advert-wrapper">
+	<aside class="row advert header-advert sticky-anchor is-absolute">
+		<div class="section-content">
+			<div id="header-1" class="ipc-advert"></div>		</div>
+	</aside>
+</div>
+
+<div class="parallax-wrapper parallax-wrapper--header"></div>
+
+      <!-- Google Tag Manager (noscript) -->
+      <noscript>
+        <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-PFB5MWX"
+            height="0" width="0"
+            style="display:none;visibility:hidden"></iframe>
+      </noscript>
+      <!-- End Google Tag Manager (noscript) -->
+      
+<div id="wrapper" class="hfeed">
+
+			<header id="header" role="banner" class="header s-container has-single-tier">
+
+	<div class="header__inner">
+
+					<div itemtype="http://schema.org/Organization" class="logo header-slot header-slot-">
+    <a itemprop="url" href="/" title="NME">
+    	<span class="hide">Link to home</span>
+		<picture>
+			<source media="(min-width: 728px)" srcset="https://ksassets.timeincuk.net/wp/uploads/sites/55/2018/06/REV.NME_.WEB_.80px-1.png" >
+			<source media="(max-width: 727px)"srcset="https://ksassets.timeincuk.net/wp/uploads/sites/55/2018/06/REV.NME_.WEB_.80px-1.png" >
+	  		<img src="https://ksassets.timeincuk.net/wp/uploads/sites/55/2018/06/REV.NME_.WEB_.80px-1.png" alt="hero profile" itemprop="logo" aria-hidden="true" data-pin-nopin="true">
+		</picture>
+    </a>
+</div>		
+	</div>
+
+		<nav>
+	<ul class="navigation hide-overflow-items" data-nav="closed">
+					<li class="has-subnav">
+				<a href="/news/music"    >Music</a>
+									<span class="submenu-toggle icon-arrow-down"></span>
+					<ul class="navigation-secondary">
+													<li >
+								<a href="https://www.nme.com/news/music"    >Music News</a>
+															</li>
+													<li >
+								<a href="https://www.nme.com/blogs/nme-blogs"    >Opinion</a>
+															</li>
+													<li >
+								<a href="https://www.nme.com/music-interviews"    >Music Interviews</a>
+															</li>
+													<li >
+								<a href="/artists"    >Artists</a>
+															</li>
+													<li >
+								<a href="https://www.nme.com/reviews/album"    >Album Reviews</a>
+															</li>
+													<li >
+								<a href="https://www.nme.com/new-album-releases"    >Album Release Dates</a>
+															</li>
+													<li >
+								<a href="https://artists.nme.com/artists/"     target="_blank" >Emerging Artists</a>
+															</li>
+													<li >
+								<a href="https://www.nme.com/blogs/nme-radar"    >New Music</a>
+															</li>
+													<li >
+								<a href="https://www.nme.com/festivals-home"    >Festivals</a>
+															</li>
+											</ul>
+							</li>
+					<li class="has-subnav">
+				<a href="https://www.nme.com/news/film"    >Film</a>
+									<span class="submenu-toggle icon-arrow-down"></span>
+					<ul class="navigation-secondary">
+													<li >
+								<a href="https://www.nme.com/news/film"    >Film News</a>
+															</li>
+													<li >
+								<a href="https://www.nme.com/reviews/movie"    >Film Reviews</a>
+															</li>
+													<li >
+								<a href="https://www.nme.com/blogs/the-movies-blog"    >Film Blogs</a>
+															</li>
+													<li >
+								<a href="https://www.nme.com/film-interviews"    >Film Interviews</a>
+															</li>
+													<li >
+								<a href="/film-releases"    >Film Release Dates</a>
+															</li>
+											</ul>
+							</li>
+					<li class="has-subnav">
+				<a href="/news/tv"    >TV</a>
+									<span class="submenu-toggle icon-arrow-down"></span>
+					<ul class="navigation-secondary">
+													<li >
+								<a href="https://www.nme.com/news/tv"    >TV News</a>
+															</li>
+													<li >
+								<a href="https://www.nme.com/blogs/tv-blogs"    >TV Blogs</a>
+															</li>
+													<li >
+								<a href="https://www.nme.com/tv-interviews"    >TV Interviews</a>
+															</li>
+											</ul>
+							</li>
+					<li class="has-subnav">
+				<a href="/videos"    >Video</a>
+									<span class="submenu-toggle icon-arrow-down"></span>
+					<ul class="navigation-secondary">
+													<li >
+								<a href="/videos/song-stories"    >Song Stories</a>
+															</li>
+													<li >
+								<a href="/videos/basement-sessions"    >Basement Sessions</a>
+															</li>
+													<li >
+								<a href="/videos/90-second-interview"    >90 Second Interviews</a>
+															</li>
+											</ul>
+							</li>
+					<li class="has-subnav">
+				<a href="http://www.nmemerch.com"    >Shop</a>
+									<span class="submenu-toggle icon-arrow-down"></span>
+					<ul class="navigation-secondary">
+													<li >
+								<a href="http://www.nmemerch.com"   rel="nofollow"   >Merch</a>
+															</li>
+													<li >
+								<a href="http://nme.backstreetmerch.com/artist/nme/magazines"   rel="nofollow"   >NME Special Issues</a>
+															</li>
+													<li >
+								<a href="http://nme.backstreetmerch.com/search?search=uncut+ultimate+music+guide"   rel="nofollow"   >Ultimate Music Guides</a>
+															</li>
+													<li >
+								<a href="http://nme.backstreetmerch.com/artist/uncut-history-of-rock/magazines"   rel="nofollow"   >History Of Rock</a>
+															</li>
+											</ul>
+							</li>
+					<li >
+				<a href="https://aaa.nme.com"    >NME AAA</a>
+							</li>
+					<li >
+				<a href="http://www.nme.com/audio"    >NME Radio</a>
+							</li>
+					<li >
+				<a href="/discount-codes"    >Discount Codes</a>
+							</li>
+		
+		
+					<li class="has-subnav header-slot-right nav-follow">
+				<span class="submenu-toggle icon-arrow-down"></span>
+				<a href="javascript:void(0);">Follow</a>
+				<ul class="nav-social">
+											<li><a href="https://www.facebook.com/nmemagazine" target="_blank" rel="noopener">Facebook</a></li>
+											<li><a href="https://twitter.com/nme" target="_blank" rel="noopener">Twitter</a></li>
+											<li><a href="https://plus.google.com/+NME/posts" target="_blank" rel="noopener">Google+</a></li>
+											<li><a href="https://www.instagram.com/nmemagazine/" target="_blank" rel="noopener">Instagram</a></li>
+									</ul>
+			</li>
+		
+		<li class="menu-more has-subnav">
+			<a href="javascript:void(0)">More <span class="icon-plus"></span></a>
+			<ul></ul>
+		</li>
+	</ul>
+
+	<a href="javascript:void(0)" class="search-site icon-search"><span class="hide">Search</span></a>
+
+	<a href="#" class="menu-icon-link hidden-md hidden-lg">
+		<span class="menu-toggle icon-menu"><span class="hide">Menu</span></span>
+	</a>
+
+	<form role="search" method="get" class="search-form form-inline s-container" action="/">
+		<div class="input-group">
+			<label for="s" class="">Search</label>
+			<input type="search" value="" name="s" class="input-sm search-field form-control" placeholder="Search">
+							<button type="submit" class="btn btn--sm" name="search">Search</button>
+						<div class="message-wrapper">
+				<div class="message message--type">Type to search</div>
+				<div class="message message--search hide">Press enter or click on the search icon</div>
+			</div>
+		</div>
+	</form>
+</nav>
+
+</header>	
+	<div id="content" role="main" class="container-fluid" >
+								<div class="trending">
+	<div class="s-container trending__inner">
+		<div class="s-container__inner">
+			<div class="trending__title">Trending:</div>
+				<div class="trending-list__outer">
+					<ul class="trending-list__inner">
+													<li><a href="/audio/nme1/player/"  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2339561"    >Listen Now</a></li>
+													<li><a href="http://www.nme.com/tag/christmas"  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2405103"    >Christmas</a></li>
+													<li><a href="https://www.nme.com/everything-you-want-to-know-about-the-1975?discoverUrl=The%201975/"  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2405104"    >The 1975</a></li>
+													<li><a href="https://www.nme.com/artists/ariana-grande"  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2339566"    >Ariana Grande</a></li>
+													<li><a href="https://www.nme.com/artists/eminem"  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2339560"    >Eminem</a></li>
+													<li><a href="/blogs/tv-blogs/game-thrones-season-8-release-date-casting-trailers-theories-2129812"  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2339565"    >Game of Thrones 8</a></li>
+													<li><a href="/photos/the-30-greatest-love-songs-as-chosen-by-nme-1415805"  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2339563"    >Love songs</a></li>
+													<li><a href="/blogs/tv-blogs/stranger-things-season-3-release-date-trailer-plot-2127430"  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2339564"    >Stranger Things 3</a></li>
+													<li><a href="/blogs/nme-blogs/records-of-the-week-best-vinyl-buy-7-days-2336958"  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2339567"    >New vinyl guide</a></li>
+													<li><a href="/list/100-best-songs-of-the-1980s-1161"  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2339571"    >80s songs</a></li>
+											</ul>
+			</div>
+			<div class="trending__fade trending__fade--before"></div>
+			<div class="trending__fade trending__fade--after"></div>
+		</div>
+	</div>
+</div>		
+		    
+				<article
+			class="post-1212217 post type-post status-publish format-standard has-post-thumbnail hentry category-music person_category-adele publication_name-nme featured-image"
+			role="article"
+			itemprop=""
+			itemscope itemtype="http://schema.org/Article"
+	>
+					<meta itemscope itemprop="mainEntityOfPage" itemType="https://schema.org/WebPage" itemid="https://www.nme.com/news/music/adele-180-1212217"/>
+			<div itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+	<meta itemprop="name" content="NME" />
+	<div itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+		<meta itemprop="url" content="https://ksassets.timeincuk.net/wp/uploads/sites/55/2018/06/REV.NME_.WEB_.80px-1.png" />
+	</div>
+</div>		
+							
+					<nav class="breadcrumb s-container"  role="navigation">
+	<div class="s-container__inner">
+		<ul xmlns:v="http://rdf.data-vocabulary.org/#">
+							<li typeof="v:Breadcrumb">
+					<a href="https://www.nme.com" rel="v:url" property="v:title">Home</a>
+				</li>
+							<li typeof="v:Breadcrumb">
+					<a href="https://www.nme.com/news" rel="v:url" property="v:title">News</a>
+				</li>
+							<li typeof="v:Breadcrumb">
+					<a href="https://www.nme.com/news/music" rel="v:url" property="v:title">Music News</a>
+				</li>
+					</ul>
+	</div>
+</nav>		
+		<div class="post-main">
+
+							<header class="post-header post-header--article">
+					<h1 class="title-primary" itemprop="headline">
+													Adele&#8217;s &#8217;21&#8217; officially the best-selling UK album of millennium
+											</h1>
+
+					
+											<div class="social-share">
+										<ul class="pw-widget hidden-xs">
+							<li>
+					<a
+							href="https://www.facebook.com/sharer/sharer.php?u=https://www.nme.com/news/music/adele-180-1212217"
+							target="_blank"
+							 rel="noopener" 							class="share-button pw-button-facebook icon-social-facebook "
+							data-url="https://www.nme.com/news/music/adele-180-1212217"
+					></a>
+				</li>
+							<li>
+					<a
+							href="https://twitter.com/intent/tweet?url=https://www.nme.com/news/music/adele-180-1212217&text=Adele&#8217;s &#8217;21&#8217; officially the best-selling UK album of millennium"
+							target="_blank"
+							 rel="noopener" 							class="share-button pw-button-twitter icon-social-twitter "
+							data-url="https://www.nme.com/news/music/adele-180-1212217"
+					></a>
+				</li>
+							<li>
+					<a
+							href="http://pinterest.com/pin/create/button/?url=https://www.nme.com/news/music/adele-180-1212217&description=Adele&#8217;s &#8217;21&#8217; officially the best-selling UK album of millennium"
+							target="_blank"
+							 rel="noopener" 							class="share-button pw-button-pinterest icon-social-pinterest "
+							data-url="https://www.nme.com/news/music/adele-180-1212217"
+					></a>
+				</li>
+								</ul>
+										<ul class="pw-widget hidden-sm hidden-md hidden-lg">
+							<li>
+					<a
+							href="https://www.facebook.com/sharer/sharer.php?u=https://www.nme.com/news/music/adele-180-1212217"
+							target="_blank"
+							 rel="noopener" 							class="share-button pw-button-facebook icon-social-facebook "
+							data-url="https://www.nme.com/news/music/adele-180-1212217"
+					></a>
+				</li>
+							<li>
+					<a
+							href="https://twitter.com/intent/tweet?url=https://www.nme.com/news/music/adele-180-1212217&text=Adele&#8217;s &#8217;21&#8217; officially the best-selling UK album of millennium"
+							target="_blank"
+							 rel="noopener" 							class="share-button pw-button-twitter icon-social-twitter "
+							data-url="https://www.nme.com/news/music/adele-180-1212217"
+					></a>
+				</li>
+							<li>
+					<a
+							href="http://pinterest.com/pin/create/button/?url=https://www.nme.com/news/music/adele-180-1212217&description=Adele&#8217;s &#8217;21&#8217; officially the best-selling UK album of millennium"
+							target="_blank"
+							 rel="noopener" 							class="share-button pw-button-pinterest icon-social-pinterest "
+							data-url="https://www.nme.com/news/music/adele-180-1212217"
+					></a>
+				</li>
+								</ul>
+	</div>
+					
+											<small class="post-author">
+		<div class="post-author-info">
+					<span>
+							</span>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<a class="post-author__name url fn n" href="https://www.nme.com/author/ashley-williams">
+					<span class="author vcard" itemprop="name">Ashley Williams</span>
+			    </a>
+			</span>
+		
+		<span>
+			<time datetime="2015-03-19T14:31:09+00:00">Mar 19, 2015 2:31 pm</time>
+			<meta itemprop="datePublished" content="2015-03-19T14:31:09+00:00"/>			<meta itemprop="dateModified" content="2015-03-21T12:36:05+00:00"/>		</span>
+	</div>
+</small>					
+					
+											<div class="post__award">
+	
+	</div>									</header>
+			
+			
+			<div class="post-main__inner">
+
+				
+																<div class="featured-media">
+		<div id="attachment_65652"
+     class="featured-image"
+     itemprop="image" itemscope itemtype="https://schema.org/ImageObject"
+>
+	<figure class="image">
+		<img src="https://ksassets.timeincuk.net/wp/uploads/sites/55/2017/10/placeholder.jpg"
+     data-src="https://ksassets.timeincuk.net/wp/uploads/sites/55/2015/12/2.Adele-21021012.jpg"
+     data-id="65652"
+     data-sizes="auto"
+     class=" lazyload blur-up"
+     alt=""
+     width=""
+	 height=""
+	 data-srcset="
+			https://ksassets.timeincuk.net/wp/uploads/sites/55/2015/12/2.Adele-21021012-320x320.jpg 320w,
+						"/>
+<meta itemprop="url" content="https://ksassets.timeincuk.net/wp/uploads/sites/55/2015/12/2.Adele-21021012.jpg">
+<meta itemprop="width" content="">
+<meta itemprop="height" content="">			</figure>
+</div>
+	</div>
+									
+				
+				<div class="post-body">
+
+					<div class="articleBody" itemprop="articleBody">
+																			
+																					<p class="post-lead">The singer beats Amy Winehouse, James Blunt, Leona Lewis and Dido to top spot</p>
+													
+																																		
+													<p><a href="/artists/adele" class="artistLink">Adele</a>’s hugely successful album &#8217;21&#8217; is now the UK’s best-selling album this millennium, according to the <a href="http://www.officialcharts.com/chart-news/official-biggest-selling-albums-of-the-millennium-so-far-revealed-__8698/">Official Charts Company</a>. </p>
+<p><img src="https://ksassets.timeincuk.net/wp/uploads/sites/55/2017/10/placeholder.jpg" data-src="https://ksassets.timeincuk.net/wp/uploads/sites/55/2015/04/2014Adele_Getty162588683_10061014-1.jpg" align="right" class="lazyload blur-up wp-image-1211599  alignright" data-sizes="auto" data-srcset="https://ksassets.timeincuk.net/wp/uploads/sites/55/2015/04/2014Adele_Getty162588683_10061014-1.jpg 900w, https://ksassets.timeincuk.net/wp/uploads/sites/55/2015/04/2014Adele_Getty162588683_10061014-1-300x200.jpg 300w, https://ksassets.timeincuk.net/wp/uploads/sites/55/2015/04/2014Adele_Getty162588683_10061014-1-768x512.jpg 768w, https://ksassets.timeincuk.net/wp/uploads/sites/55/2015/04/2014Adele_Getty162588683_10061014-1-320x213.jpg 320w, https://ksassets.timeincuk.net/wp/uploads/sites/55/2015/04/2014Adele_Getty162588683_10061014-1-620x413.jpg 620w, https://ksassets.timeincuk.net/wp/uploads/sites/55/2015/04/2014Adele_Getty162588683_10061014-1-630x420.jpg 630w"  />A new survey reveals the album leads the Top 50 Official Biggest Selling Artist Albums of the millennium, with sales of 4.74 million since its release in 2011. The feat has pushed the singer-songwriter ahead of Amy Winehouse’s 2006 final album, &#8216;Back to Black&#8217;, which has sold more than 3.5 million copies.</p>
+<div class="injection"><div id="apester-2" class="apester-desktop hidden"></div><script>window._apesterSlots=window._apesterSlots||[];window._apesterSlots.push({"id":"apester-2","class":"apester-desktop","placement":"desktop","token":"5644b81019aec6d348309b65","context":true,"tags":"","fallback":true});</script><section id="keystone-premium-sidebar-widget-8" class=" s-sidebar sticky-anchor keystone-premium-sidebar-widget premium_inline_1 post-promo"><div class="sidebar-widget-inner-wrapper"><div id="ipc-advert-id-37" class=" hide-widget-title widget ipc-advert-class"><div id="side-1" class="ipc-advert"></div></div></div></section></div>
+<p>&#8217;21&#8217; spent 23 weeks at the top of the UK album charts. The album was also a global chart-topping success, taking the top spot in more than 30 countries. It has sold an estimated 11 million copies in the US alone.</p>
+<p>James Blunt’s 2004 debut album &#8216;Back To Bedlam&#8217; took third place with 3.31 million units sold. The album topped the Official Albums Chart for 10 weeks, and spent a total of 40 weeks in the Top 40.</p>
+<p>Leona Lewis’s &#8216;Spirit&#8217; (2007) came in at Number Four with 3.13 million UK sales, and Dido’s &#8216;No Angel&#8217; (1999) rounded off the top five, selling 3.08 million copies. </p>
+<p>Meanwhile, <a href="https://www.nme.com/news/ed-sheeran/83676">Ed Sheeran’s &#8216;X is the most recent album to surpass the two million sales threshold</a>, only the fifth album to do so this decade.</p>
+<p>The Top 10 biggest selling UK albums of the millennium are:</p>
+<div class="injection"><section id="keystone-premium-sidebar-widget-9" class=" s-sidebar sticky-anchor keystone-premium-sidebar-widget premium_inline_2 post-promo"><div class="sidebar-widget-inner-wrapper"><div id="ipc-advert-id-36" class=" hide-widget-title widget ipc-advert-class"><div id="post-inline-side-2" class="ipc-advert"></div></div><div id="keystone-query-widget-id-19" class="palette-a listing--single listing--single-b s-container image-aspect-landscape visible-md hidden-xs hidden-sm widget keystone-query-widget"><h2 class="widgettitle">Latest News</h2>
+<div class="sections"><div class="s-container__inner">
+	<ul
+		class="listing-items"
+				data-post-count="3"
+	>
+					
+			<li class="listing-item">
+	 <a class="entry" href="https://www.nme.com/news/music/gerard-way-heavy-song-i-am-a-hag-2426119" title="Gerard Way says he&#8217;s written a &#8220;kind of heavy&#8221; new song called &#8216;I Am The Hag&#8217;"> 		<article class="listing-entry">
+																		<div class="entry-media">
+					<div class="entry-media-inner entry-image image-crop">
+						<div id="attachment_2426133"
+     class="featured-image wp-caption"
+     itemprop="image" itemscope itemtype="https://schema.org/ImageObject"
+>
+	<figure class="image-crop">
+		<img src="https://ksassets.timeincuk.net/wp/uploads/sites/55/2017/10/placeholder.jpg"
+     data-src="https://ksassets.timeincuk.net/wp/uploads/sites/55/2019/01/gerard-way-heavy-song-i-am-a-hag-620x394.jpg"
+     data-id="2426133"
+     data-sizes="auto"
+     class="image-sm lazyload blur-up"
+     alt="Gerard Way heavy song I Am A Hag"
+     width="620"
+	 height="394"
+	 data-srcset="
+			https://ksassets.timeincuk.net/wp/uploads/sites/55/2019/01/gerard-way-heavy-song-i-am-a-hag-320x203.jpg 320w,
+				https://ksassets.timeincuk.net/wp/uploads/sites/55/2019/01/gerard-way-heavy-song-i-am-a-hag-620x394.jpg 620w,
+				https://ksassets.timeincuk.net/wp/uploads/sites/55/2019/01/gerard-way-heavy-song-i-am-a-hag-920x584.jpg 920w,
+				https://ksassets.timeincuk.net/wp/uploads/sites/55/2019/01/gerard-way-heavy-song-i-am-a-hag-1220x775.jpg 1220w,
+				https://ksassets.timeincuk.net/wp/uploads/sites/55/2019/01/gerard-way-heavy-song-i-am-a-hag-1620x1029.jpg 1620w,
+				https://ksassets.timeincuk.net/wp/uploads/sites/55/2019/01/gerard-way-heavy-song-i-am-a-hag-1920x1219.jpg 1920w,
+	"/>
+<meta itemprop="url" content="https://ksassets.timeincuk.net/wp/uploads/sites/55/2019/01/gerard-way-heavy-song-i-am-a-hag-620x394.jpg">
+<meta itemprop="width" content="620">
+<meta itemprop="height" content="394">					<figcaption class="wp-caption-text">
+				Way says the song might be released this year
+				Credit: Frank Hoensch/Redferns via Getty Images			</figcaption>
+			</figure>
+</div>
+					</div>
+				</div>
+			
+									
+			<div class="entry-content">
+									
+													<h3><span>Gerard Way says he&#8217;s written a &#8220;kind of heavy&#8221; new song called &#8216;I Am The Hag&#8217;</span></h3>
+																										
+					
+																</div>
+		</article>
+	 </a> </li>
+			
+			
+					
+			<li class="listing-item">
+	 <a class="entry" href="https://www.nme.com/news/music/bring-me-the-horizon-new-song-medicine-2426091" title="Bring Me The Horizon are releasing electronic new song &#8216;Medicine&#8217; tomorrow"> 		<article class="listing-entry">
+																		<div class="entry-media">
+					<div class="entry-media-inner entry-image image-crop">
+						<div id="attachment_2426113"
+     class="featured-image wp-caption"
+     itemprop="image" itemscope itemtype="https://schema.org/ImageObject"
+>
+	<figure class="image-crop">
+		<img src="https://ksassets.timeincuk.net/wp/uploads/sites/55/2017/10/placeholder.jpg"
+     data-src="https://ksassets.timeincuk.net/wp/uploads/sites/55/2019/01/bring-me-the-horizon-new-song-medicine-620x394.jpg"
+     data-id="2426113"
+     data-sizes="auto"
+     class="image-sm lazyload blur-up"
+     alt="Bring Me The Horizon new song medicine"
+     width="620"
+	 height="394"
+	 data-srcset="
+			https://ksassets.timeincuk.net/wp/uploads/sites/55/2019/01/bring-me-the-horizon-new-song-medicine-320x203.jpg 320w,
+				https://ksassets.timeincuk.net/wp/uploads/sites/55/2019/01/bring-me-the-horizon-new-song-medicine-620x394.jpg 620w,
+				https://ksassets.timeincuk.net/wp/uploads/sites/55/2019/01/bring-me-the-horizon-new-song-medicine-920x584.jpg 920w,
+				https://ksassets.timeincuk.net/wp/uploads/sites/55/2019/01/bring-me-the-horizon-new-song-medicine-1220x775.jpg 1220w,
+				https://ksassets.timeincuk.net/wp/uploads/sites/55/2019/01/bring-me-the-horizon-new-song-medicine-1620x1029.jpg 1620w,
+				https://ksassets.timeincuk.net/wp/uploads/sites/55/2019/01/bring-me-the-horizon-new-song-medicine-1920x1219.jpg 1920w,
+	"/>
+<meta itemprop="url" content="https://ksassets.timeincuk.net/wp/uploads/sites/55/2019/01/bring-me-the-horizon-new-song-medicine-620x394.jpg">
+<meta itemprop="width" content="620">
+<meta itemprop="height" content="394">					<figcaption class="wp-caption-text">
+				The song is taken from the band's new album
+				Credit: C Brandon/Redferns			</figcaption>
+			</figure>
+</div>
+					</div>
+				</div>
+			
+									
+			<div class="entry-content">
+									
+													<h3><span>Bring Me The Horizon are releasing electronic new song &#8216;Medicine&#8217; tomorrow</span></h3>
+																										
+					
+																</div>
+		</article>
+	 </a> </li>
+							<li id="native-content-desktop" class="listing-item sharethrough-ad sharethrough-ad-hidden ipc-advert"></li>			
+			
+					
+			<li class="listing-item">
+	 <a class="entry" href="https://www.nme.com/news/music/slipknot-share-brutal-behind-the-scenes-footage-from-all-out-life-recording-2426089" title="Slipknot share brutal behind-the-scenes footage from &#8216;All Out Life&#8217; recording"> 		<article class="listing-entry">
+																		<div class="entry-media">
+					<div class="entry-media-inner entry-image image-crop">
+						<div id="attachment_2426096"
+     class="featured-image wp-caption"
+     itemprop="image" itemscope itemtype="https://schema.org/ImageObject"
+>
+	<figure class="image-crop">
+		<img src="https://ksassets.timeincuk.net/wp/uploads/sites/55/2017/10/placeholder.jpg"
+     data-src="https://ksassets.timeincuk.net/wp/uploads/sites/55/2019/01/rexfeatures_6908303m-620x394.jpg"
+     data-id="2426096"
+     data-sizes="auto"
+     class="image-sm lazyload blur-up"
+     alt="Slipknot live"
+     width="620"
+	 height="394"
+	 data-srcset="
+			https://ksassets.timeincuk.net/wp/uploads/sites/55/2019/01/rexfeatures_6908303m-320x203.jpg 320w,
+				https://ksassets.timeincuk.net/wp/uploads/sites/55/2019/01/rexfeatures_6908303m-620x394.jpg 620w,
+				https://ksassets.timeincuk.net/wp/uploads/sites/55/2019/01/rexfeatures_6908303m-920x584.jpg 920w,
+				https://ksassets.timeincuk.net/wp/uploads/sites/55/2019/01/rexfeatures_6908303m-1220x775.jpg 1220w,
+				https://ksassets.timeincuk.net/wp/uploads/sites/55/2019/01/rexfeatures_6908303m-1620x1029.jpg 1620w,
+				https://ksassets.timeincuk.net/wp/uploads/sites/55/2019/01/rexfeatures_6908303m-1920x1219.jpg 1920w,
+	"/>
+<meta itemprop="url" content="https://ksassets.timeincuk.net/wp/uploads/sites/55/2019/01/rexfeatures_6908303m-620x394.jpg">
+<meta itemprop="width" content="620">
+<meta itemprop="height" content="394">					<figcaption class="wp-caption-text">
+				Slipknot perform live
+				Credit: REX			</figcaption>
+			</figure>
+</div>
+					</div>
+				</div>
+			
+									
+			<div class="entry-content">
+									
+													<h3><span>Slipknot share brutal behind-the-scenes footage from &#8216;All Out Life&#8217; recording</span></h3>
+																										
+					
+																</div>
+		</article>
+	 </a> </li>
+			
+			
+			</ul>
+</div></div></div></div></section><section id="embed_code-2" class="hidden-md hidden-lg s-container sticky-anchor hide-widget-title widget_embed_code premium_inline_2 post-promo"><h2 class="widgettitle heading"><span>Sharethrough (Mobile)</span></h2><section class="s-container listing--single listing--single-sharethrough image-aspect-landscape default sharethrough-ad sharethrough-ad-hidden">
+  <div class="s-container__inner">
+    <ul>
+      <li id="native-content-mobile" class="listing-item">
+      </li>
+    </ul>
+  </div>
+</section></section></div>
+<div class="injection"><div id="apester-3" class="apester-mobile hidden"></div><script>window._apesterSlots=window._apesterSlots||[];window._apesterSlots.push({"id":"apester-3","class":"apester-mobile","placement":"mobile","token":"5644b81019aec6d348309b65","context":true,"tags":"","fallback":true});</script></div>
+<p><strong>1. Adele &#8211; &#8217;21&#8217;<br />
+2. Amy Winehouse &#8211; &#8216;Back to Black&#8217;<br />
+3. James Blunt &#8211; &#8216;Back to Bedlam&#8217;<br />
+4. Leona Lewis &#8211; &#8216;Spirit&#8217;<br />
+5. Dido &#8211; &#8216;No Angel&#8217;<br />
+6. The Beatles &#8211; &#8216;1&#8217;<br />
+7. Michael Bublé &#8211; &#8216;Crazy Love&#8217;<br />
+8. David Gray &#8211; &#8216;White Ladder&#8217;<br />
+9. Lady Gaga &#8211; &#8216;The Fame&#8217;<br />
+10. Coldplay &#8211; &#8216;A Rush Of Blood To The Head&#8217;</strong><br />
+https://link.brightcove.com/services/player/?bctid=4107506142001</p>
+
+											</div>
+
+					
+																
+											<div id="taboola-below-article-thumbnails"></div>									</div>
+			</div>
+		</div>
+	</article>
+			
+	</div>
+
+			<div class="parallax-wrapper parallax-wrapper--footer sticky-anchor"></div>
+
+<footer id="footer" role="contentinfo" class="footer sticky-anchor">
+	<div class="footer__row">
+		<nav class="footer__col footer__col--content">
+			<ul id="menu-10784" class="footer-menu footer-menu--plain">
+			<li id="menu-item-419762" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-419762">
+			<a href="https://www.nme.com/"   target="_blank" rel="noopener" class="menu-icon-item icon-social-no-icon">
+				<span class="menu-icon-item icon-no-icon">
+					Home
+				</span>
+			</a>
+		</li>
+			<li id="menu-item-592212" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-592212">
+			<a href="https://www.nme.com/contact"   target="_blank" rel="noopener" class="menu-icon-item icon-social-no-icon">
+				<span class="menu-icon-item icon-no-icon">
+					Contact
+				</span>
+			</a>
+		</li>
+			<li id="menu-item-419763" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-419763">
+			<a href="http://www.timeincuk.com/advertise/"   target="_blank" rel="noopener" class="menu-icon-item icon-social-no-icon">
+				<span class="menu-icon-item icon-no-icon">
+					Advertise
+				</span>
+			</a>
+		</li>
+			<li id="menu-item-419764" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-419764">
+			<a href="https://www.ti-mediacontent.com"   target="_blank" rel="noopener" class="menu-icon-item icon-social-no-icon">
+				<span class="menu-icon-item icon-no-icon">
+					License NME
+				</span>
+			</a>
+		</li>
+			<li id="menu-item-419765" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-419765">
+			<a href="http://www.timeincuk.com/terms-and-conditions/"   target="_blank" rel="noopener" class="menu-icon-item icon-social-no-icon">
+				<span class="menu-icon-item icon-no-icon">
+					Site User Terms
+				</span>
+			</a>
+		</li>
+			<li id="menu-item-419766" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-419766">
+			<a href="http://www.timeincuk.com/privacy/"   target="_blank" rel="noopener" class="menu-icon-item icon-social-no-icon">
+				<span class="menu-icon-item icon-no-icon">
+					Privacy Policy
+				</span>
+			</a>
+		</li>
+			<li id="menu-item-419767" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-419767">
+			<a href="http://www.timeincuk.com/privacy/#cookies"   target="_blank" rel="noopener" class="menu-icon-item icon-social-no-icon">
+				<span class="menu-icon-item icon-no-icon">
+					Cookie Information
+				</span>
+			</a>
+		</li>
+			<li id="menu-item-2347533" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2347533">
+			<a href="/discount-codes"   target="_blank" rel="noopener" class="menu-icon-item icon-social-no-icon">
+				<span class="menu-icon-item icon-no-icon">
+					Discount Codes
+				</span>
+			</a>
+		</li>
+			<li id="menu-item-2366147" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2366147">
+			<a href="#"   target="_blank" rel="noopener" class="menu-icon-item icon-social-no-icon">
+				<span class="menu-icon-item icon-no-icon">
+					Privacy Settings
+				</span>
+			</a>
+		</li>
+	</ul>		</nav>
+		<nav class="footer__col footer__col--sidebar">
+			<ul id="menu-10785" class="footer-menu footer-menu--icons">
+			<li id="menu-item-405763" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-405763">
+			<a href="https://www.facebook.com/nmemagazine"   target="_blank" rel="noopener" class="menu-icon-item icon-social-facebook">
+				<span class="menu-icon-item icon-facebook">
+					Facebook
+				</span>
+			</a>
+		</li>
+			<li id="menu-item-405764" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-405764">
+			<a href="https://twitter.com/nme"   target="_blank" rel="noopener" class="menu-icon-item icon-social-twitter">
+				<span class="menu-icon-item icon-twitter">
+					Twitter
+				</span>
+			</a>
+		</li>
+			<li id="menu-item-405765" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-405765">
+			<a href="https://plus.google.com/+NME"   target="_blank" rel="noopener" class="menu-icon-item icon-social-google">
+				<span class="menu-icon-item icon-google">
+					Google+
+				</span>
+			</a>
+		</li>
+			<li id="menu-item-405766" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-405766">
+			<a href="https://www.instagram.com/nmemagazine/"   target="_blank" rel="noopener" class="menu-icon-item icon-social-instagram">
+				<span class="menu-icon-item icon-instagram">
+					Instagram
+				</span>
+			</a>
+		</li>
+			<li id="menu-item-2036276" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2036276">
+			<a href="https://uk.pinterest.com/nmemagazine/"   target="_blank" rel="noopener" class="menu-icon-item icon-social-pinterest">
+				<span class="menu-icon-item icon-pinterest">
+					Pinterest
+				</span>
+			</a>
+		</li>
+	</ul>		</nav>
+
+		<div class="footer-legal">
+			<a itemprop="url" href="" title="">
+			<img 
+				itemprop="logo" 
+				src="https://ksassets.timeincuk.net/wp/uploads/sites/55/2017/10/placeholder.jpg" 
+				data-src="https://ksassets.timeincuk.net/wp/uploads/sites/55/2018/06/REV.NME_.WEB_.40px.png" 
+				class="lazyload blur-up footer-logo" 
+				alt="" 
+				data-pin-nopin="true">
+		</a>
+		<sub>&copy; Copyright TI Media Limited. All rights reserved.</sub>
+	<a href="https://www.ipso.co.uk/" class="footer__ipso" target="_blank" rel="noopener">
+		<img 
+			src="https://ksassets.timeincuk.net/wp/uploads/sites/55/2017/10/placeholder.jpg" 
+			data-src="https://www.nme.com/wp-content/themes/simba-theme/assets/images/ipso-light.png" 
+			class="lazyload blur-up" 
+			alt="IPSO Regulated" 
+			width="100%" />
+	</a>
+</div>
+	</div>
+</footer>
+				<script type="text/javascript">
+			(function() {
+				/* Include required screen size functions right here */
+				var getDisplayWidth=function(){var e=0;if(typeof window.innerWidth!="undefined"){e=window.innerWidth}else if(typeof document.documentElement!="undefined"&&typeof document.documentElement.clientWidth!="undefined"&&document.documentElement.clientWidth!=0){e=document.documentElement.clientWidth}else{e=document.getElementsByTagName("body")[0].clientWidth}return Number(e)};
+				var getWindowSize = getDisplayWidth();
+				window.ipcTags = window.ipcTags || {};
+				/* Pageskin targeting stuff */
+				if(getWindowSize >= 1350) {
+					window.ipcTags['pageskin'] = 'yes';
+				} else {
+					window.ipcTags['pageskin'] = 'no';
+				}
+
+				
+				if(getWindowSize >= 690) {
+					window.ipcTags.platform = 'desktop';
+				} else {
+					window.ipcTags.platform = 'mobile';
+				}
+
+				
+				window.ipcTags['dfp_config']['required_tags'].push('pageskin');
+			})();
+		</script>
+		<script type='text/javascript'>
+			(function(d,w){
+				var s = d.createElement('script');
+				w.lazySizesConfig = {'expFactor':'1'};
+				s.src = 'https://www.nme.com/wp-content/plugins/keystone-images/assets/js/sizes.js?ver=0.0.1';
+				d.body.appendChild(s);
+			})(document,window);
+		</script><script type='text/javascript' src='https://www.nme.com/wp-content/plugins/keystone-apester/assets/js/apester.js?ver=1.1.9'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var keystoneJWPlayerConfig = {"viewplay":"1","viewplay_sticky_tabswitch":"","sticky":"1","sticky_position":"right","mute":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.nme.com/wp-content/plugins/keystone-jwplayer/assets/js/main.js?ver=1.0.13'></script>
+<script type='text/javascript' src='https://www.nme.com/wp-content/plugins/keystone-taboola/assets/js/taboola.js?ver=0.0.1'></script>
+<script type='text/javascript' src='https://www.nme.com/wp-content/plugins/ipc-wordpress-digital-editions/public/assets/js/public.js?ver=2.2.2'></script>
+<script type='text/javascript' src='https://www.nme.com/wp-content/themes/simba-theme/assets/js/scripts.min.js?ver=1545229993'></script>
+<script type='text/javascript' src='https://www.nme.com/wp-content/plugins/keystone-newsletter/widget/js/widget.js?ver=1.1.3'></script>
+<script type='text/javascript' src='https://www.nme.com/wp-includes/js/wp-embed.min.js?ver=NC45Ljc'></script>
+		<script>
+			(function(){
+				var n='scr'+'ipt',p=document.getElementsByTagName(n)[0],s=document.createElement(n);
+				s.async=true;
+				s.src='https://assets.ti-media.net/js/ipccore/ipccore.1.13.17.min.js';
+				p.parentNode.insertBefore(s,p);
+			})();
+			var googletag = googletag || {};
+			googletag.cmd = googletag.cmd || [];
+			window.IPCCoreQueue = window.IPCCoreQueue || [];
+			window.IPCCoreQueue.push(function(){
+				IPCCore.promise (IPCCore.P_ADMANAGER_CONFIG_IS_DEFINED).resolve ({
+					revsci      : {
+						placements : ["wL98l3","8U90Lq","qq4g5z"]					},
+					accountId   : '18711560',
+					environment : 'live',
+					googleTag   : googletag,
+					ipcTags     : window.ipcTags
+				});
+			});
+		</script>
+		<div id="dfpad-overlay" class="ipc-advert"></div><div id="gumgum" class="ipc-advert"></div><div id="teads" class="ipc-advert"></div><div id="sovrn" class="ipc-advert"></div>
+	
+</div><!-- /wrapper -->
+
+	<script type="text/javascript">
+        let _ks_modules = [
+            'baseFunctions',
+            'headerJS',
+            'stickyBlocks',
+            'objectFit',
+            'featuredVideo',
+            'sharethroughListener',
+            'stickyNav',
+            'multimediaGallery',
+            'pqwAds',
+            'userRating',
+            'select2',
+        ];
+        for (let i = 0; i < _ks_modules.length; i++) {
+            let module = window[_ks_modules[i]];
+            if (typeof module !== 'undefined' && typeof module.init === 'function') {
+                module.init();
+            }
+        }
+	</script>
+
+	
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"aaccaa7fff","applicationID":"22537819,9562757,26939178","transactionName":"YgNVYEcAXhJYBUQNXFtJdldBCF8PFhVZClRZAw==","queueTime":0,"applicationTime":1051,"atts":"TkRCFg8aTU0bBxJeSEgb","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+
+</html>

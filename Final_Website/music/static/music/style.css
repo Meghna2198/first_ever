@@ -1,0 +1,47 @@
+body{
+    background: white url("images/background.jpg");
+}
+
+a{
+  color: white;
+}
+
+.jumbotron{
+  height: 300px;
+  color: white;
+  background-color: rgba(30, 30, 30, 0.8);
+  padding: 10px;
+  font-family: monospace;
+}
+
+.navbar{
+    border-radius: 0;
+}
+
+.navbar-brand{
+    font-family: 'Satisfy', cursive;
+}
+
+#shasha{
+  max-width: 150px;
+  max-height: 150px;
+  overflow: hidden;
+}
+
+#tanishq{
+  height: 80px;
+}
+
+.jumbotron img{
+  max-width: 250px;
+  max-height: 150px;
+}
+
+.active a{
+  background-color: rgba(20, 20, 20, 0.4) !important;
+}
+
+
+#album_title{
+  font-size: 16px;
+}
