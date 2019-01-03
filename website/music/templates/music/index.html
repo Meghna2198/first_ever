@@ -3,10 +3,11 @@
 {% block albums_active %}active{% endblock %}
 {% block body %}
     {% for album in all_albums %}
+    <h1>push</h1>
               <div class="col-sm-4 col-lg-2" align="center">
                     <div class="jumbotron">
                          <div id="shasha">
-                            <img src="{{ album.album_logo.url }}">
+                            <img src="{{ album.album_logo.url }}">{% extends 'music/base.html' %}
                          </div>
                          <div id = "tanishq">
                            <div id = "album_title">{{ album.album_title }}</div>
