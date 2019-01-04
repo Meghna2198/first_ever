@@ -52,12 +52,24 @@
                         <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp;  Add Album
                     </a>
                 </li>
+                {%if user.is_authenticated%}
                  <li class="">
-                    <a href="#">
+                    <a href="{% url 'music:logout' %}">
                         <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp;  Logout
                     </a>
-
                 </li>
+                {%else%}
+                 <li class="">
+                    <a href="{% url 'music:login' %}">
+                        <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp;  Login
+                    </a>
+                </li>
+                <li class="">
+                    <a href="{% url 'music:register' %}">
+                        <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp;  Register
+                    </a>
+                </li>
+                {%endif%}
             </ul>
 
         </div>
