@@ -6,6 +6,24 @@ from django.contrib.auth import authenticate, login, logout
 from django.views.generic import View
 from .models import Album
 from .forms import RegisterForm, LoginForm
+from django.db.models import Q
+from django.utils import timezone
+
+
+class SearchView(generic.ListView):
+    template_name = 'music/search.html'
+    context_object_name = 'all_songs'
+    def get_queryset(self):
+        queryset_list = Song.objects.all()
+        print(self.request)
+        query = self.request.GET.get("q")
+        if query:
+            queryset_list = queryset_list.filter(
+                Q(song_title__icontains=query)
+            )
+        print(queryset_list)
+        return queryset_list
+
 
 
 class IndexView(generic.ListView):

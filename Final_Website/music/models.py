@@ -22,6 +22,10 @@ class Song(models.Model):
     is_favorite = models.BooleanField(default=False)
 
 
+    def get_absolute_url(self):
+        return reverse('song')
+
+
     def __str__(self):
-        return self.song_title
+       return self.song_title
 

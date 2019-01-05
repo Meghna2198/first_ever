@@ -1,0 +1,15 @@
+{%extends 'music/base.html'%}
+{%block title%}Search Results{%endblock%}
+{% block body %}
+
+<ul>
+  {% for song in all_songs %}
+    {{song.song_title}}.{{song.file_type}} - {{song.album.artist}}
+    <br>
+  {% endfor %}
+</ul>
+
+{%if error_message%}
+  {{error_message}}
+{%endif%}
+{%endblock%}
